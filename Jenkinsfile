@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                git "https://github.com/sbtalk71/TestWebApp.git"
+                git "https://github.com/akki-079/emp-data-service.git"
             }
         }
         stage("compile"){
@@ -20,13 +20,13 @@ pipeline{
         
         stage("docker_build"){
             steps{
-            sh "sudo docker build -t sbtalk71/myapp:$BUILD_NUMBER ."
+            sh "sudo docker build -t akki/myapp:$BUILD_NUMBER ."
             }
         }
         stage("Push"){
         steps {
         withDockerRegistry([ credentialsId: "dockerCreds", url: "" ]) {
-          sh 'docker push sbtalk71/myapp:$BUILD_NUMBER'
+          sh 'docker push akki/myapp:$BUILD_NUMBER'
         }
       }
     }
