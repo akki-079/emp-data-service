@@ -1,0 +1,11 @@
+server:
+  port: 8181
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: welcome1
+    url: jdbc:mariadb://training-server.cngnkphas7nb.us-east-1.rds.amazonaws.com:3306/sapientdb
+    username: admin
+    
+  jpa:
+    show-sql: true
