@@ -20,7 +20,7 @@ pipeline{
         
         stage("docker_build"){
             steps{
-            sh "sudo docker build -t akki-079/myapp:$BUILD_NUMBER ."
+            sh "sudo docker build -t empdata:$BUILD_NUMBER ."
             }
 		}
         
