@@ -20,16 +20,9 @@ pipeline{
         
         stage("docker_build"){
             steps{
-            sh "sudo docker build -t akki/myapp:$BUILD_NUMBER ."
+            sh "sudo docker build -t akki-079/myapp:$BUILD_NUMBER ."
             }
-        }
-        stage("Push"){
-        steps {
-        withDockerRegistry([ credentialsId: "dockerCreds", url: "" ]) {
-          sh 'docker push akki/myapp:$BUILD_NUMBER'
-        }
-      }
-    }
-    }
-   
+		}
+        
+	}
 }
